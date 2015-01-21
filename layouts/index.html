@@ -1,15 +1,16 @@
 <!DOCTYPE HTML>
 <html lang="en-US">
     <head>
-        <meta charset="UTF-8">
-        <meta http-equiv="refresh" content="1;url={{ .Site.Params.RootRedirect.Url }}">
+        <base href="{{ .Site.BaseUrl }}">
         <script type="text/javascript">
-            window.location.href = "{{ .Site.Params.RootRedirect.Url }}";
+            window.location.href = "{{ .Site.BaseUrl }}{{ .Site.Params.RootRedirect.Url | safeHtml }}";
         </script>
+        <meta charset="UTF-8">
+        <meta http-equiv="refresh" content="1;url={{ .Site.BaseUrl }}{{ .Site.Params.RootRedirect.Url }}">
         <title>{{ .Site.Params.RootRedirect.Name }}</title>
     </head>
     <body>
         If you are not redirected automatically, follow the
-        <a href='{{ .Site.Params.RootRedirect.Url }}'>link to {{ .Site.Params.RootRedirect.Name }}</a>
+        <a href='{{ .Site.BaseUrl }}{{ .Site.Params.RootRedirect.Url }}'>link to {{ .Site.Params.RootRedirect.Name }}</a>
     </body>
 </html>
