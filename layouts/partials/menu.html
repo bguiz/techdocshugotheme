@@ -26,16 +26,16 @@
             {{end}}
               </li>
           {{end}}
-            <li> 
+            <li>
                 <a href="https://github.com/{{.Site.Params.GitHubUser}}/{{.Site.Params.GitHubRepo}}/issues" target="blank">
-                    <i class='fa fa-life-ring'></i>Issues &amp; Help
-                </a> 
+                    <i class='fa fa-life-ring'></i> Issues
+                </a>
             </li>
             {{ if .IsPage }}
                 <li>
-                    <a href="https://github.com/{{.Site.Params.GitHubUser}}/{{.Site.Params.GitHubRepo}}/edit/master/content/{{.File.Dir}}{{.File.LogicalName}}" target="blank">
-                        <i class='fa fa-edit'></i> Refine this Page
-                    </a> 
+                    <a href="{{.Site.Params.GithubDocEditPrefix}}/{{.File.Dir}}" target="blank">
+                        <i class='fa fa-edit'></i> Edit
+                    </a>
                 </li>
             {{ end }}
         </ul>
