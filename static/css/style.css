@@ -329,6 +329,7 @@ ul.sidebar-menu li.active a i {
 
 .wrapper .panel {
     margin-bottom: 0;
+    min-height: 100%;
 }
 
 .row {
@@ -347,11 +348,11 @@ ul.sidebar-menu li.active a i {
     height: 100%;
 }
 
-.sidebar-closed .col-md-1 {
-    display: none;
+.row-content {
+    overflow-y: scroll;
 }
 
-.sidebar-closed .col-md-10 {
+.sidebar-closed .row-content {
     width: 100%;
 }
 
@@ -437,10 +438,11 @@ h1.top-menu {
 
 .navigation {
     position: absolute;
+    padding: 0.1em;
     top: 0;
     bottom: 0;
     margin: 0;
-    max-width: 150px;
+    max-width: 12em;
     width:100%;
     height: 100%  display: flex;
     justify-content: center;
@@ -451,6 +453,15 @@ h1.top-menu {
     text-align: center;
     -webkit-transition: all 350ms ease;
     transition: all 350ms ease;
+}
+
+.navigation i {
+    position:absolute;
+    top: 50%;
+    left: 50%;
+    margin-top: -50%;
+    left: 0;
+    right: 0;
 }
 
 .navigation.next {
