@@ -294,15 +294,16 @@ ul.sidebar-menu li.active a i {
 #main-content {
     position:absolute;
     overflow: hidden;
-    left:0;
+    left: 200px;
     top:60px;
     right:0;
     bottom:0;
     line-height: 1.8;
     font-size: 19px;
 }
-.sidebar-open #main-content {
-    left: 200px;
+
+.sidebar-closed #main-content {
+    left:0;
 }
 
 .header {

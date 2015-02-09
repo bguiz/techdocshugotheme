@@ -61,6 +61,7 @@
     #main-content {
         margin: 0px!important;
         position: none !important;
+        left: 0;
     }
 
     .btn {
