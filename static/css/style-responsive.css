@@ -55,6 +55,17 @@
     /*--sidebar toggle---*/
     .toggle-nav {
         display:block;
+        position: static;
+        color: #cccccc;
+        float: right;
+        margin: 10px 5px;
+        background: none;
+        border: none;
+        -webkit-transition: none;
+        -moz-transition: none;
+        -o-transition: none;
+        -ms-transition: none;
+        transition: none;
     }
 
     /* body container */
@@ -63,6 +74,11 @@
         position: none !important;
         left: 0;
     }
+
+    .row-content {
+        width: 100%;
+    }
+
 
     .btn {
         margin-bottom: 5px;

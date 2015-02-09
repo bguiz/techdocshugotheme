@@ -42,40 +42,29 @@ function initializeJS() {
     // sidebar menu toggle
     jQuery(function() {
         function responsiveView() {
-            var wSize = jQuery(window).width();
-            if (wSize <= 768) {
-                jQuery('#container')
-                  .removeClass('sidebar-open')
-                  .addClass('sidebar-closed');
-                jQuery('#sidebar > ul').hide();
-            }
-
-            if (wSize > 768) {
-                jQuery('#container')
-                  .addClass('sidebar-open')
-                  .removeClass('sidebar-closed');
-                jQuery('#sidebar > ul').show();
-            }
+            showHideNav(jQuery(window).width() > 768);
         }
         jQuery(window).on('load', responsiveView);
         jQuery(window).on('resize', responsiveView);
     });
 
     jQuery('.toggle-nav').click(function () {
-        if (jQuery('#sidebar > ul').is(":visible") === true) {
-            jQuery('#main-content').css({
-                'margin-left': '0px'
-            });
-            jQuery('#sidebar > ul').hide();
-            jQuery("#container").addClass("sidebar-closed");
-        } else {
-            jQuery('#sidebar > ul').show();
-            jQuery('#sidebar').css({
-                'margin-left': '0'
-            });
-            jQuery("#container").removeClass("sidebar-closed");
-        }
+        showHideNav(!jQuery('#sidebar').is(":visible"));
     });
+
+    function showHideNav(isShow) {
+        if (isShow) {
+            jQuery('#sidebar').show();
+              jQuery('#container')
+                .addClass('sidebar-open')
+                .removeClass('sidebar-closed');
+        } else {
+            jQuery('#sidebar').hide();
+              jQuery('#container')
+                .removeClass('sidebar-open')
+                .addClass('sidebar-closed');
+        }
+    }
 
     //bar chart
     if (jQuery(".custom-custom-bar-chart")) {
