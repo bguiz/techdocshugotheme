@@ -44,12 +44,16 @@ function initializeJS() {
         function responsiveView() {
             var wSize = jQuery(window).width();
             if (wSize <= 768) {
-                jQuery('#container').addClass('sidebar-close');
+                jQuery('#container')
+                  .removeClass('sidebar-open')
+                  .addClass('sidebar-closed');
                 jQuery('#sidebar > ul').hide();
             }
 
             if (wSize > 768) {
-                jQuery('#container').removeClass('sidebar-close');
+                jQuery('#container')
+                  .addClass('sidebar-open')
+                  .removeClass('sidebar-closed');
                 jQuery('#sidebar > ul').show();
             }
         }
@@ -62,15 +66,9 @@ function initializeJS() {
             jQuery('#main-content').css({
                 'margin-left': '0px'
             });
-            jQuery('#sidebar').css({
-                'margin-left': '-180px'
-            });
             jQuery('#sidebar > ul').hide();
             jQuery("#container").addClass("sidebar-closed");
         } else {
-            jQuery('#main-content').css({
-                'margin-left': '180px'
-            });
             jQuery('#sidebar > ul').show();
             jQuery('#sidebar').css({
                 'margin-left': '0'
