@@ -1,3 +1,8 @@
+@media (max-width: 1024px) {
+
+
+}
+
 @media (max-width: 768px) {
 
     .header {
@@ -56,7 +61,7 @@
     .toggle-nav {
         display:block;
         position: static;
-        color: #cccccc;
+        color: #bbbbbb;
         float: right;
         margin: 10px 5px;
         background: none;
@@ -78,7 +83,6 @@
     .row-content {
         width: 100%;
     }
-
 
     .btn {
         margin-bottom: 5px;

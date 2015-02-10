@@ -38,29 +38,36 @@ function initializeJS() {
             jQuery("#sidebar").scrollTo("+="+Math.abs(diff),500);
     });
 
+    var isMenu = true;
 
     // sidebar menu toggle
+    var widthLast = 0;
     jQuery(function() {
         function responsiveView() {
-            showHideNav(jQuery(window).width() > 768);
+            var width = jQuery(window).width();
+            var delta = (width < 768) && (widthLast >= 768) ? -1: (width >= 768) && (widthLast < 768) ? +1 : 0;
+            widthLast = width;
+            isMenu = (delta > 0) ? true : (delta < 0) ? false : isMenu;
+            showHideNav(isMenu);
         }
         jQuery(window).on('load', responsiveView);
         jQuery(window).on('resize', responsiveView);
     });
 
     jQuery('.toggle-nav').click(function () {
-        showHideNav(!jQuery('#sidebar').is(":visible"));
+        isMenu = !isMenu;
+        showHideNav(isMenu);
     });
 
     function showHideNav(isShow) {
         if (isShow) {
             jQuery('#sidebar').show();
-              jQuery('#container')
+            jQuery('#container')
                 .addClass('sidebar-open')
                 .removeClass('sidebar-closed');
         } else {
             jQuery('#sidebar').hide();
-              jQuery('#container')
+            jQuery('#container')
                 .removeClass('sidebar-open')
                 .addClass('sidebar-closed');
         }
