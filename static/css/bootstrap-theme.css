@@ -370,6 +370,10 @@ code {
   border-radius: 4px;
 }
 
+a code {
+  color: inherit;
+}
+
 pre code {
     padding: 0;
     font-size: inherit;

@@ -132,6 +132,7 @@ a, a:hover, a:focus {
 .panel-body a:after {
   display: block;
   content: "";
+  margin-top:1px;
   height: 1px;
   width: 0%;
   background-color: #CC5A5C;
@@ -374,7 +375,7 @@ h1.top-menu {
     left: 60px;
     right: 60px;
     padding-top: 15px;
-    padding-left: 140px;
+    padding-left: 10px;
     color: #EEE;
     text-align: left;
 }
