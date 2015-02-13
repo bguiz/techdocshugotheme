@@ -245,6 +245,10 @@ ul.sidebar-menu li a {
     overflow:hidden;
 }
 
+ul.sub.open {
+    margin-top: -7px !important;
+}
+
 ul.sidebar-menu li.active a, ul.sidebar-menu li a:hover, ul.sidebar-menu li a:focus {
     background: #F8F8F8;
     color: #CC5A5C;
